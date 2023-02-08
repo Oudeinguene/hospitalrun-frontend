@@ -28,7 +28,7 @@ const Sidebar = () => {
   }
 
   const expandibleArrow: CSSProperties = {
-    marginRight: '20px',
+    marginRight: '10px',
   }
 
   const iconMargin: CSSProperties = {
@@ -123,7 +123,7 @@ const Sidebar = () => {
         <Icon icon="patients" /> {!sidebarCollapsed && t('patients.label')}
       </ListItem>
       {splittedPath[1].includes('patient') && expandedItem === 'patient' && (
-        <List layout="flush">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           {permissions.includes(Permissions.WritePatients) && (
             <ListItem
               className="nav-item"
@@ -173,7 +173,7 @@ const Sidebar = () => {
         <Icon icon="appointment" /> {!sidebarCollapsed && t('scheduling.label')}
       </ListItem>
       {splittedPath[1].includes('appointment') && expandedItem === 'appointment' && (
-        <List layout="flush" className="nav flex-column">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           {permissions.includes(Permissions.WriteAppointments) && (
             <ListItem
               className="nav-item"
@@ -223,7 +223,7 @@ const Sidebar = () => {
         <Icon icon="lab" /> {!sidebarCollapsed && t('labs.label')}
       </ListItem>
       {splittedPath[1].includes('labs') && expandedItem === 'labs' && (
-        <List layout="flush" className="nav flex-column">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           {permissions.includes(Permissions.RequestLab) && (
             <ListItem
               className="nav-item"
@@ -273,7 +273,7 @@ const Sidebar = () => {
         <Icon icon="medication" /> {!sidebarCollapsed && t('medications.label')}
       </ListItem>
       {splittedPath[1].includes('medications') && expandedItem === 'medications' && (
-        <List layout="flush" className="nav flex-column">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           {permissions.includes(Permissions.RequestMedication) && (
             <ListItem
               className="nav-item"
@@ -323,7 +323,7 @@ const Sidebar = () => {
         <Icon icon="incident" /> {!sidebarCollapsed && t('incidents.label')}
       </ListItem>
       {splittedPath[1].includes('incidents') && expandedItem === 'incidents' && (
-        <List layout="flush" className="nav flex-column">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           {permissions.includes(Permissions.ReportIncident) && (
             <ListItem
               className="nav-item"
@@ -384,7 +384,7 @@ const Sidebar = () => {
         <Icon icon="image" /> {!sidebarCollapsed && t('imagings.label')}
       </ListItem>
       {splittedPath[1].includes('imaging') && expandedItem === 'imagings' && (
-        <List layout="flush" className="nav flex-column">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           {permissions.includes(Permissions.RequestImaging) && (
             <ListItem
               className="nav-item"
@@ -418,7 +418,7 @@ const Sidebar = () => {
       style={{ width: sidebarCollapsed ? '56px' : '' }}
     >
       <div className="sidebar-sticky">
-        <List layout="flush" className="nav flex-column">
+        <List layout="flush" className="nav flex-column" style={"display:flex; flex-direction:row; flex-wrap:no-wrap;"}>
           <ListItem
             onClick={() => dispatch(updateSidebar())}
             className="nav-item"
